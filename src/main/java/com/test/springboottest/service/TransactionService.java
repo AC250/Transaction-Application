@@ -38,10 +38,8 @@ public class TransactionService {
         }
 
         //checking conditions for buyer type and seller type
-        if((tr.getbType().equalsIgnoreCase("retailer")&&tr.getsType().equalsIgnoreCase("customer"))||
-                (tr.getsType().equalsIgnoreCase("retailer")&&tr.getbType().equalsIgnoreCase("customer"))
-        ||(tr.getbType().equalsIgnoreCase("retailer")&&tr.getsType().equalsIgnoreCase("wholesaler"))||
-                (tr.getsType().equalsIgnoreCase("retailer")&&tr.getbType().equalsIgnoreCase("wholesaler"))
+        if(((tr.getsType().equalsIgnoreCase("retailer")&&tr.getbType().equalsIgnoreCase("customer"))
+        ||(tr.getbType().equalsIgnoreCase("retailer")&&tr.getsType().equalsIgnoreCase("wholesaler")))
         &&flag==true) {
 
             tRepo.save(tr);
